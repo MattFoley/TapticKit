@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-Z1-yVl">
+                                <color key="backgroundColor" red="0.038028474751928658" green="0.33180308643013545" blue="0.043794148599551684" alpha="0.6446104307432432" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="NKN-yZ-AhO"/>
+                                    <constraint firstAttribute="width" constant="156" id="TwE-PJ-qpe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="Press Me">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q7x-cf-a1s" userLabel="Type Control">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="14f-1U-IcZ"/>
+                                    <constraint firstAttribute="height" constant="28" id="FCq-2z-LZk"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Single"/>
+                                    <segment title="Pulse"/>
+                                </segments>
+                                <connections>
+                                    <action selector="typeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xen-pi-FZs"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kga-ld-CBn" userLabel="Single Level Control">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="M5V-SU-gFb"/>
+                                    <constraint firstAttribute="height" constant="28" id="ZlZ-Ln-OG5"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Light"/>
+                                    <segment title="Medium"/>
+                                </segments>
+                                <connections>
+                                    <action selector="levelChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HQO-be-SD6"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-eN-hrv" userLabel="Pulse Level Control">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="ZTH-Sl-nnK"/>
+                                    <constraint firstAttribute="height" constant="28" id="mJs-69-TcT"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Light"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Heavy"/>
+                                </segments>
+                                <connections>
+                                    <action selector="levelChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZhG-5v-hFx"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger Threshold: 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdf-xc-5DL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UXb-b8-7wx"/>
+                                    <constraint firstAttribute="width" constant="246" id="gZx-Uh-DJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="LMw-2z-0XA" userLabel="TriggerForce">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="5ll-Wq-Hld"/>
+                                    <constraint firstAttribute="height" constant="30" id="xLp-1g-4hd"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="thresholdChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qvD-yi-Ctn"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45989704132080078" green="0.69275236129760742" blue="0.90390992164611816" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kga-ld-CBn" firstAttribute="centerY" secondItem="CZn-eN-hrv" secondAttribute="centerY" id="56c-8s-3FC"/>
+                            <constraint firstItem="Q7x-cf-a1s" firstAttribute="top" secondItem="uFW-Z1-yVl" secondAttribute="bottom" constant="20" id="BE4-UY-afc"/>
+                            <constraint firstItem="Q7x-cf-a1s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ifp-Ot-2OL"/>
+                            <constraint firstItem="kga-ld-CBn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ih9-0Q-MYW"/>
+                            <constraint firstItem="uFW-Z1-yVl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sz4-69-cHY"/>
+                            <constraint firstItem="Fdf-xc-5DL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y5T-D7-fH9"/>
+                            <constraint firstItem="LMw-2z-0XA" firstAttribute="top" secondItem="Fdf-xc-5DL" secondAttribute="bottom" constant="1" id="cCc-HW-fYA"/>
+                            <constraint firstItem="Fdf-xc-5DL" firstAttribute="top" secondItem="CZn-eN-hrv" secondAttribute="bottom" constant="25" id="k6F-RV-DdV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fdf-xc-5DL" secondAttribute="bottom" constant="51" id="nzM-ew-6gf"/>
+                            <constraint firstItem="LMw-2z-0XA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wKZ-l8-bCH"/>
+                            <constraint firstItem="CZn-eN-hrv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xf6-XC-8qf"/>
+                            <constraint firstItem="CZn-eN-hrv" firstAttribute="top" secondItem="Q7x-cf-a1s" secondAttribute="bottom" constant="22" id="ynY-ST-45k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="uFW-Z1-yVl" id="8PD-9h-xGd"/>
+                        <outlet property="pulseControl" destination="CZn-eN-hrv" id="po6-Ha-QKG"/>
+                        <outlet property="singleControl" destination="kga-ld-CBn" id="Sck-en-eRn"/>
+                        <outlet property="thresholdText" destination="Fdf-xc-5DL" id="iHc-lL-hwb"/>
+                        <outlet property="typeControl" destination="Q7x-cf-a1s" id="te9-Oc-cXk"/>
+                        <outletCollection property="tapticControls" destination="uFW-Z1-yVl" id="4bJ-Qc-Kfp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
